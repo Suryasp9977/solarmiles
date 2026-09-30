@@ -1,0 +1,2 @@
+.topbar { background: var(--navy); color: #fff; font-size: 13px; text-align: center; padding: 6px 12px; font-weight: 600; }
+.topbar a { text-decoration: underline; }

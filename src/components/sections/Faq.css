@@ -1,0 +1,4 @@
+.faq .wrap { max-width: 800px; }
+.faq details { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; }
+.faq summary { cursor: pointer; font-weight: 600; }
+.faq details p { color: var(--mute); margin: 10px 0 0; }

@@ -1,0 +1,17 @@
+export const faqs = [
+  { q: 'What subsidy can I get in Tamil Nadu?', a: 'Central PM Surya Ghar gives up to ₹78,000. The Tamil Nadu top-up adds ₹5,000 (1 kW), ₹10,000 (2 kW) or ₹22,000 (3 kW+), so up to ₹1,00,000 in total for eligible homes. We handle both applications.' },
+  { q: 'How much can I save?', a: 'Most homes cut bills by 80–90%, and savings grow as tariffs rise.' },
+  { q: 'Do I need to pay everything upfront?', a: 'No. EMI and bank loan options are available, and the subsidy reduces your net cost.' },
+  { q: 'How long does installation take?', a: 'Typically about a day after design approval, depending on site and weather.' },
+  { q: 'Will it work in monsoon or on cloudy days?', a: 'Yes, at reduced output; our estimates already account for this.' },
+  { q: 'Does solar work during a power cut?', a: 'On-grid systems switch off during outages for safety. Add a battery for backup.' },
+  { q: 'How long do panels last?', a: '25 years or more, with gradual efficiency decline.' },
+  { q: 'Do I need to clean panels?', a: 'Yes, periodically. Our maintenance plan covers this for 5 years.' },
+  { q: 'Can it damage my roof?', a: 'No. We use proper anchoring and waterproofing for RCC and sheet roofs.' },
+  { q: 'How big a system do I need?', a: 'It depends on your consumption, shadow-free roof area and local sunlight. We size it during the survey.' },
+  { q: 'Is the subsidy process complicated?', a: 'No. We prepare and file the paperwork and coordinate with the EB office.' },
+  { q: 'What is the break-even period?', a: 'Usually 2 to 4 years, followed by savings through the 25-year system life.' },
+  { q: 'Can I use heavy appliances on solar?', a: 'Yes. Solar feeds in sync with the grid, so all household appliances work normally.' },
+  { q: 'Can I monitor generation?', a: 'Yes, through a monitoring app showing live generation and savings.' },
+  { q: 'What if my roof is not concrete?', a: 'Most roof types work. We assess it during the free survey.' },
+]
