@@ -12,40 +12,36 @@ import Subsidy from './components/sections/Subsidy.jsx'
 import Finance from './components/sections/Finance.jsx'
 import Monitoring from './components/sections/Monitoring.jsx'
 import OurPromise from './components/sections/OurPromise.jsx'
-import SeeSolar from './components/sections/SeeSolar.jsx'
-import SystemTypes from './components/sections/SystemTypes.jsx'
 import Survey from './components/sections/Survey.jsx'
-import Impact from './components/sections/Impact.jsx'
-import BankPartners from './components/sections/BankPartners.jsx'
 import ServiceAreas from './components/sections/ServiceAreas.jsx'
 import Faq from './components/sections/Faq.jsx'
 import Contact from './components/sections/Contact.jsx'
+import Founding from './components/sections/Founding.jsx'
 
 export default function App() {
   return (
     <>
       <TopBar />
       <Header />
+
       <main>
         <Hero />
         <Stats />
         <WhyUs />
+        <Calculator />
         <Roadmap />
         <Services />
-        <Calculator />
         <Subsidy />
         <Finance />
         <Monitoring />
+        <Founding />
         <OurPromise />
-        <SeeSolar />
-        <SystemTypes />
         <Survey />
-        <Impact />
-        <BankPartners />
         <ServiceAreas />
         <Faq />
         <Contact />
       </main>
+
       <Footer />
       <WhatsAppButton />
     </>

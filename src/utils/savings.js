@@ -1,24 +1,43 @@
-export const MIN_BILL = 2500
-export const MAX_BILL = 30000
-export const SOLAR_BILL = 300
+export const MIN_BILL = 1500
+export const MAX_BILL = 50000
 
-export const formatINR = (n) => '₹' + Math.round(n).toLocaleString('en-IN')
+const ASSUMED_TARIFF = 8
+const GENERATION_PER_KW_MONTH = 120
+const OFFSET = 0.85
 
-const centralSubsidy = (kw) => (kw >= 3 ? 78000 : kw >= 2 ? 60000 + (kw - 2) * 18000 : kw * 30000)
-const stateSubsidy = (kw) => (kw >= 3 ? 22000 : kw >= 2 ? 10000 : 5000)
+export const formatINR = (n) =>
+  '₹' + Math.round(n).toLocaleString('en-IN')
 
-// Estimate system size, savings and payback from a bimonthly electricity bill
-export function estimateSavings(bill) {
-  const kw = Math.round((bill / 1820) * 10) / 10
-  const annualSavings = bill * 6
-  const netCost = kw * 66000 - centralSubsidy(kw) - stateSubsidy(kw)
-  const payback = netCost / annualSavings
+export function estimateSavings(monthlyBill) {
+  const monthlyUnits = monthlyBill / ASSUMED_TARIFF
+  const rawKw = monthlyUnits / GENERATION_PER_KW_MONTH
+
+  const kw = Math.max(
+    1,
+    Math.min(20, Math.ceil(rawKw * 2) / 2)
+  )
+
+  const annualSavings = monthlyBill * 12 * OFFSET
+
+  const indicativeNetBill = Math.max(
+    0,
+    monthlyBill * (1 - OFFSET)
+  )
+
+  const systemCost = kw * 65000
+  const payback = systemCost / annualSavings
 
   return {
     kw,
     annualSavings,
+    indicativeNetBill,
     lifetimeSavings: annualSavings * 25,
     payback: Math.round(payback * 10) / 10,
-    roi: Math.round(100 / payback),
+    roi: Math.round((1 / payback) * 100),
+    assumptions: {
+      tariff: ASSUMED_TARIFF,
+      generation: GENERATION_PER_KW_MONTH,
+      offset: OFFSET
+    },
   }
 }

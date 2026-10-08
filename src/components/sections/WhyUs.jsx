@@ -7,11 +7,22 @@ export default function WhyUs() {
     <section id="why">
       <div className="wrap">
         <SectionHeading
-          title="Why families choose SolarMiles"
-          subtitle="Solar is more than panels. Design, mounting and service decide your savings for 25 years."
+          tag="THE SOLARMILES STANDARD"
+          title="Solar is a 25-year decision. We build for the whole journey."
+          subtitle="The cheapest quote is not always the cheapest solar. Design quality, structure, installation, paperwork and after-sales service all affect what your rooftop actually delivers."
         />
+
         <div className="grid g4">
-          {reasons.map((item) => <Card key={item.title} {...item} />)}
+          {reasons.map((item) => (
+            <Card key={item.title} {...item} />
+          ))}
+        </div>
+
+        <div className="trust-strip">
+          <span>✓ Transparent proposal</span>
+          <span>✓ Rooftop-first design</span>
+          <span>✓ Subsidy guidance</span>
+          <span>✓ Direct service support</span>
         </div>
       </div>
     </section>

@@ -9,18 +9,33 @@ export default function Roadmap() {
       <div className="wrap">
         <SectionHeading
           center
-          title="Your solar roadmap"
-          subtitle="Six stops from your first call to your first zero-bill month."
+          tag="ONE TEAM. ONE JOURNEY."
+          title="We handle the complicated parts. You enjoy the savings."
+          subtitle="A clear process from first conversation to a commissioned rooftop system."
         />
+
         <div className="road">
-          <div className="stop">🏁 Start here</div>
+          <div className="stop">
+            01 · Tell us about your bill
+          </div>
+
           {roadmapSteps.map((step, index) => (
-            <div key={step.title} className={`rd ${index % 2 ? 'R' : 'L'}`}>
-              <i>{index + 1}</i>
-              <Card title={step.title} text={step.text} />
+            <div
+              key={step.title}
+              className={`rd ${index % 2 ? 'R' : 'L'}`}
+            >
+              <i>{String(index + 1).padStart(2, '0')}</i>
+
+              <Card
+                title={step.title}
+                text={step.text}
+              />
             </div>
           ))}
-          <div className="stop end">☀️ Saving from day one</div>
+
+          <div className="stop end">
+            ☀️ Solar on. Savings begin.
+          </div>
         </div>
       </div>
     </section>

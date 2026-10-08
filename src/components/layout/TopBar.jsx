@@ -4,7 +4,8 @@ import './TopBar.css'
 export default function TopBar() {
   return (
     <div className="topbar">
-      ☀️ Free home visit & 3D solar design · Call <a href={contact.phoneHref}>{contact.phoneDisplay}</a>
+      ☀️ <strong>Free rooftop assessment</strong> + personalised solar estimate ·{' '}
+      <a href={contact.phoneHref}>{contact.phoneDisplay}</a>
     </div>
   )
 }

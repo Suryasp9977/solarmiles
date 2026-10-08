@@ -6,9 +6,16 @@ export default function Services() {
   return (
     <section id="services">
       <div className="wrap">
-        <SectionHeading title="Solar solutions for every roof" subtitle="Choose the segment that fits you." />
+        <SectionHeading
+          tag="SOLAR FOR REAL LIFE"
+          title="One platform. Different rooftops."
+          subtitle="Start with the system you need today. We can size and design the solution around your consumption, roof and backup requirements."
+        />
+
         <div className="grid g3">
-          {services.map((item) => <Card key={item.tag} {...item} />)}
+          {services.map((item) => (
+            <Card key={item.tag} {...item} />
+          ))}
         </div>
       </div>
     </section>

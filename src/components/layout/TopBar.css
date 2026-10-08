@@ -1,2 +1,12 @@
-.topbar { background: var(--navy); color: #fff; font-size: 13px; text-align: center; padding: 6px 12px; font-weight: 600; }
-.topbar a { text-decoration: underline; }
+.topbar {
+  background: #101b4d;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  padding: 8px 12px;
+  letter-spacing: .01em;
+}
+
+.topbar a {
+  text-decoration: underline;
+}

@@ -1,5 +1,49 @@
-.site-footer { background: #eaf5fd; color: var(--mute); padding: 44px 0 24px; font-size: 14px; }
-.site-footer .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-.site-footer h4 { color: var(--ink); margin: 0 0 8px; }
-.site-footer a { display: block; padding: 2px 0; }
-.site-footer .copy { margin-top: 28px; opacity: 0.7; }
+.site-footer {
+  background: #0d1538;
+  color: #aeb9d5;
+  padding: 56px 0 22px;
+  font-size: 14px;
+}
+
+.site-footer .footer-grid {
+  grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+}
+
+.site-footer h4 {
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+.site-footer a {
+  display: block;
+  padding: 4px 0;
+}
+
+.site-footer p {
+  margin: 8px 0 0;
+}
+
+.site-footer .logo img {
+  filter: brightness(0) invert(1);
+  opacity: .95;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+}
+
+@media (max-width: 820px) {
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}

@@ -3,12 +3,18 @@ import './Stats.css'
 
 export default function Stats() {
   return (
-    <div className="stats">
-      <div className="wrap grid">
+    <section
+      className="stats"
+      aria-label="SolarMiles customer promise"
+    >
+      <div className="wrap stats-grid">
         {stats.map((stat) => (
-          <div key={stat.label}><b>{stat.value}</b><span>{stat.label}</span></div>
+          <div key={stat.label}>
+            <b>{stat.value}</b>
+            <span>{stat.label}</span>
+          </div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }

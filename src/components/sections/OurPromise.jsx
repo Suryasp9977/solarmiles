@@ -9,13 +9,19 @@ export default function OurPromise() {
         <div>
           <SectionHeading
             tag="THE SOLARMILES PROMISE"
-            title="Solar that delivers on its promise"
-            subtitle="Guaranteed savings, end-to-end care and complete peace of mind. Edit the terms below to match your real offer."
+            title="No mystery after you pay."
+            subtitle="We want your proposal to be clear about what is included, what is optional and what is covered after commissioning."
           />
-          <a className="btn" href="#quote">Get a Free Consultation</a>
+
+          <a className="btn" href="#quote">
+            Get a transparent proposal
+          </a>
         </div>
+
         <div className="grid">
-          {promises.map((item) => <Card key={item.title} {...item} />)}
+          {promises.map((item) => (
+            <Card key={item.title} {...item} />
+          ))}
         </div>
       </div>
     </section>

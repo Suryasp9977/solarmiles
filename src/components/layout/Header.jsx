@@ -8,12 +8,18 @@ export default function Header() {
       <div className="wrap">
         <nav>
           <Logo href="#top" />
+
           <ul>
             {navLinks.map((link) => (
-              <li key={link.href}><a href={link.href}>{link.label}</a></li>
+              <li key={link.href}>
+                <a href={link.href}>{link.label}</a>
+              </li>
             ))}
           </ul>
-          <a className="btn" href="#quote">Get Free Quote</a>
+
+          <a className="btn header-cta" href="#quote">
+            Get Free Assessment
+          </a>
         </nav>
       </div>
     </header>
