@@ -5,8 +5,7 @@ import WhatsAppButton from './components/layout/WhatsAppButton.jsx'
 import Hero from './components/sections/Hero.jsx'
 import Stats from './components/sections/Stats.jsx'
 import WhyUs from './components/sections/WhyUs.jsx'
-import Roadmap from './components/sections/Roadmap.jsx'
-import Services from './components/sections/Services.jsx'
+// import Services from './components/sections/Services.jsx'
 import Calculator from './components/sections/Calculator.jsx'
 import Subsidy from './components/sections/Subsidy.jsx'
 import Finance from './components/sections/Finance.jsx'
@@ -29,8 +28,7 @@ export default function App() {
         <Stats />
         <WhyUs />
         <Calculator />
-        <Roadmap />
-        <Services />
+        {/* <Services /> */}
         <Subsidy />
         <Finance />
         <Monitoring />

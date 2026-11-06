@@ -34,75 +34,16 @@ export default function ChennaiMap({
   active,
   onSelect,
 }) {
-  const zoneEntries = Object.entries(zones)
+  // const zoneEntries = Object.entries(zones)
 
   return (
     <div className="coverage-explorer">
-
-      {/* Header */}
-      <div className="coverage-header">
-
-        <div>
-          <span className="coverage-kicker">
-            SOLARMILES CHENNAI
-          </span>
-
-          <h3>
-            Solar power,
-            <br />
-            wherever you are in Chennai.
-          </h3>
-
-          <p>
-            Explore our current service coverage by
-            cluster. Select an area to see the
-            neighbourhoods we serve.
-          </p>
-        </div>
-
-        <div className="coverage-hq">
-          <div className="coverage-hq-dot">
-            <span />
-          </div>
-
-          <div>
-            <strong>
-              SolarMiles HQ
-            </strong>
-
-            <small>
-              Ambattur, Chennai
-            </small>
-          </div>
-        </div>
-
+           <div className="map-bg" aria-hidden="true">
+        <img src="/images/chennai-locations.webp" alt="" width="2400" height="1100" fetchPriority="high" />
       </div>
-
-
-      {/* Coverage visual */}
-      <div className="coverage-visual">
-
-        {/* Decorative centre */}
-        <div className="coverage-core">
-
-          <div className="coverage-core-ring">
-            <div className="coverage-core-inner">
-              <span>SM</span>
-            </div>
-          </div>
-
-          <strong>
-            Chennai
-          </strong>
-
-          <small>
-            SolarMiles service coverage
-          </small>
-
-        </div>
-
-
-        {/* Service clusters */}
+      
+      {/* Bottom controls */}
+      {/* <div className="coverage-footer">
         {zoneEntries.map(
           ([zone, areas]) => {
 
@@ -121,24 +62,20 @@ export default function ChennaiMap({
               <button
                 key={zone}
                 type="button"
-                className={`coverage-cluster coverage-${zone.toLowerCase()} ${
-                  isActive ? 'active' : ''
-                }`}
+          className={
+            active === 'All'
+              ? 'coverage-all active'
+              : 'coverage-all'
+          }
                 onClick={() => onSelect(zone)}
               >
-
-                <div className="cluster-icon">
-                  {meta.icon}
-                </div>
+          <span className="coverage-all-icon">
+            ◉
+          </span>
 
                 <div className="cluster-content">
-
-                  <span className="cluster-eyebrow">
-                    {meta.eyebrow}
-                  </span>
-
                   <strong>
-                    {zone}
+                    {meta.eyebrow}
                   </strong>
 
                   <span className="cluster-count">
@@ -155,13 +92,6 @@ export default function ChennaiMap({
             )
           }
         )}
-
-      </div>
-
-
-      {/* Bottom controls */}
-      <div className="coverage-footer">
-
         <button
           type="button"
           className={
@@ -195,17 +125,7 @@ export default function ChennaiMap({
           </span>
         </button>
 
-        <div className="coverage-note">
-          <span>✓</span>
-
-          <p>
-            Service clusters are business coverage
-            categories and are not official GCC
-            administrative boundaries.
-          </p>
-        </div>
-
-      </div>
+      </div> */}
 
     </div>
   )
