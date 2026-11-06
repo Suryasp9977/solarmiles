@@ -5,6 +5,9 @@ import './Hero.css'
 export default function Hero() {
   return (
     <section id="top" className="hero">
+            <div className="hero-bg" aria-hidden="true">
+        <img src="/images/hero-home.webp" alt="" width="2400" height="1100" fetchPriority="high" />
+      </div>
       <div className="wrap hero-grid">
 
         <div className="hero-copy">
