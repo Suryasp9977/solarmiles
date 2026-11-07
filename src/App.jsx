@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useState } from 'react'
 import TopBar from './components/layout/TopBar.jsx'
 import Header from './components/layout/Header.jsx'
 import Footer from './components/layout/Footer.jsx'
@@ -16,8 +17,25 @@ import ServiceAreas from './components/sections/ServiceAreas.jsx'
 import Faq from './components/sections/Faq.jsx'
 import Contact from './components/sections/Contact.jsx'
 import Founding from './components/sections/Founding.jsx'
+import QuoteModal from './components/sections/QuoteModal.jsx'
 
 export default function App() {
+  const [quoteOpen, setQuoteOpen] = useState(false)
+  const openQuote = useCallback(() => setQuoteOpen(true), [])
+  const closeQuote = useCallback(() => setQuoteOpen(false), [])
+
+  // Any link to #quote, or any element with data-open-quote, opens the popup.
+  useEffect(() => {
+    const onClick = (e) => {
+      const trigger = e.target.closest?.('a[href="#quote"], [data-open-quote]')
+      if (!trigger) return
+      e.preventDefault()
+      openQuote()
+    }
+    document.addEventListener('click', onClick)
+    return () => document.removeEventListener('click', onClick)
+  }, [openQuote])
+
   return (
     <>
       <TopBar />
@@ -42,6 +60,7 @@ export default function App() {
 
       <Footer />
       <WhatsAppButton />
+      <QuoteModal open={quoteOpen} onClose={closeQuote} source="website" />
     </>
   )
 }
