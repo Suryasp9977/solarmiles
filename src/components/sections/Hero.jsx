@@ -1,4 +1,3 @@
-import LeadForm from '../ui/LeadForm.jsx'
 import { heroPills } from '../../data/content.js'
 import './Hero.css'
 
@@ -42,6 +41,10 @@ export default function Hero() {
               <span key={pill}>✓ {pill}</span>
             ))}
           </div>
+                  <p className="art-note" aria-hidden="true">
+          <span className="art-note-line">Same sun.</span> Smarter tomorrow<br />
+          <span className="art-note-city">for Chennai.</span>
+        </p>
 
           <div className="hero-trust">
             <div>
@@ -126,20 +129,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
-        <LeadForm
-          id="quote"
-          title="Get your free solar assessment"
-          description="Tell us your bill and PIN code. We'll prepare the next step over WhatsApp."
-          billOptions={[
-            'Less than ₹1,500',
-            '₹1,500 – ₹4,000',
-            '₹4,000 – ₹8,000',
-            'More than ₹8,000'
-          ]}
-          submitLabel="Continue on WhatsApp"
-          successMessage="WhatsApp opened with your enquiry. Send the message to start your assessment."
-        />
 
       </div>
     </section>

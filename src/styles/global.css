@@ -8,6 +8,7 @@
   --sky: #e8f4fd;
   --ink: #1f2937;
   --mute: #5b6b80;
+  --green: #0f8a5c;
   --line: #dbe7f3;
   --pri: #f59e0b;
   --pri2: #2b3990;
@@ -117,7 +118,8 @@ section {
   border: 0;
   cursor: pointer;
   font-size: 15px;
-  font-family: inherit;
+  font-family: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-optical-sizing: auto;
 }
 
 .btn:hover {

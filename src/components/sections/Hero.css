@@ -437,3 +437,7 @@
     bottom: 10px;
   }
 }
+
+.art-note { position: absolute; top: 22%; right: 7%; margin: 0; font-family: 'Caveat', 'Segoe Script', cursive; font-size: 24px; line-height: 1.1; color: #1f4f96; transform: rotate(-4deg); text-align: left; }
+.art-note-line { font-size: 30px; font-weight: 700; }
+.art-note-city { color: var(--green); }
