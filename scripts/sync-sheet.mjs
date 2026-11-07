@@ -29,7 +29,10 @@ export async function syncOnce({ fetchFn = fetch, env = process.env, log = conso
   // 1. Find leads that have not reached the sheet.
   const q = 'sheet_synced_at=is.null&order=created_at.asc&limit=200&select=*'
   const listRes = await fetchFn(`${supaUrl}/rest/v1/leads?${q}`, { headers: supaHeaders })
-  if (!listRes.ok) throw new Error(`Supabase query failed: ${listRes.status}`)
+      if (!listRes.ok) {
+    const detail = await listRes.text().catch(() => '')
+    throw new Error(`Supabase query failed: ${listRes.status} ${detail}`)
+  }
   const leads = await listRes.json()
 
   let synced = 0
