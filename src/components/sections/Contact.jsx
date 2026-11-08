@@ -52,14 +52,6 @@ export default function Contact() {
         </div>
 
         <LeadForm
-          phonePlaceholder="WhatsApp number"
-          billOptions={[
-            'Less than ₹1,500',
-            '₹1,500 – ₹2,500',
-            '₹2,500 – ₹4,000',
-            '₹4,000 – ₹8,000',
-            'More than ₹8,000'
-          ]}
           showConsent
           submitLabel="Start My Solar Assessment"
           successMessage="WhatsApp opened with your enquiry. Send the message to start your assessment."

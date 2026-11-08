@@ -1,23 +1,40 @@
 import { useState } from 'react'
-import { estimateSavings, formatINR, MAX_BILL, MIN_BILL } from '../../utils/savings.js'
+import {
+  calculatePlan,
+  DEFAULT_BILL,
+  formatINR,
+  formatNumber,
+  GEN_PER_KW_MONTH,
+  isValidBill,
+  MAX_BILL,
+  MIN_BILL,
+  TARIFF_PER_UNIT,
+} from '../../lib/solar.js'
 import './Calculator.css'
 
-const DEFAULT_BILL = 5000
+const range = (a, b) => `₹${formatNumber(a)}–${formatNumber(b)}`
 
 export default function Calculator() {
   const [input, setInput] = useState(String(DEFAULT_BILL))
   const [bill, setBill] = useState(DEFAULT_BILL)
   const [error, setError] = useState(false)
-  const result = estimateSavings(bill)
+
+  // Area is not known yet, so it is not capped here. The rooftop survey sets the final size.
+  const plan = calculatePlan({ bill, area: 5000 })
 
   const calculate = () => {
     const value = Number(input)
-    if (!(value >= MIN_BILL && value <= MAX_BILL)) {
+    if (!isValidBill(value)) {
       setError(true)
       return
     }
     setError(false)
     setBill(value)
+  }
+
+  // Opens the quote popup with this bill pre-selected.
+  const openQuote = () => {
+    window.dispatchEvent(new CustomEvent('solarmiles:open-quote', { detail: { bill } }))
   }
 
   return (
@@ -41,23 +58,19 @@ export default function Calculator() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && calculate()}
               aria-label="Average monthly electricity bill"
+              aria-describedby={error ? 'calc-hint' : undefined}
             />
             <small>/ month</small>
           </div>
 
-          <button
-            className="btn btn-lg"
-            type="button"
-            onClick={calculate}
-          >
+          <button className="btn btn-lg" type="button" onClick={calculate}>
             Calculate my savings
           </button>
         </div>
 
         {error && (
-          <p className="hint err">
-            Enter a monthly bill between {formatINR(MIN_BILL)} and{' '}
-            {formatINR(MAX_BILL)}.
+          <p className="hint err" id="calc-hint" role="alert">
+            Enter a monthly bill between {formatINR(MIN_BILL)} and {formatINR(MAX_BILL)}.
           </p>
         )}
 
@@ -65,7 +78,7 @@ export default function Calculator() {
           <div className="result-main">
             <div className="result-kicker">INDICATIVE SYSTEM</div>
 
-            <b className="big-number">{result.kw} kW</b>
+            <b className="big-number">{plan.kwLabel} kW</b>
 
             <span>recommended starting size</span>
 
@@ -74,12 +87,12 @@ export default function Calculator() {
             <div className="result-pair">
               <div>
                 <small>Potential annual savings</small>
-                <b>{formatINR(result.annualSavings)}</b>
+                <b>{range(plan.annualSavingsLow, plan.annualSavingsHigh)}</b>
               </div>
 
               <div>
-                <small>Indicative remaining bill</small>
-                <b>~{formatINR(result.indicativeNetBill)}/mo</b>
+                <small>Indicative bill after solar</small>
+                <b>~{range(plan.billAfterLow, plan.billAfterHigh)}/mo</b>
               </div>
             </div>
           </div>
@@ -89,25 +102,26 @@ export default function Calculator() {
 
             <div className="assumption">
               <span>Average tariff</span>
-              <b>₹{result.assumptions.tariff}/unit</b>
+              <b>₹{TARIFF_PER_UNIT}/unit</b>
             </div>
 
             <div className="assumption">
               <span>Solar yield</span>
-              <b>
-                ~{result.assumptions.generation} units/kW/mo
-              </b>
+              <b>~{GEN_PER_KW_MONTH} units/kW/mo</b>
             </div>
 
             <div className="assumption">
-              <span>Bill offset</span>
-              <b>
-                ~{Math.round(result.assumptions.offset * 100)}%
-              </b>
+              <span>Estimated subsidy</span>
+              <b>up to {formatINR(plan.subsidy)}</b>
+            </div>
+
+            <div className="assumption">
+              <span>Payback</span>
+              <b>{plan.paybackLow}–{plan.paybackHigh} yrs</b>
             </div>
 
             <p>
-              Tariffs, export rules, roof shade, system design and actual
+              Tariffs, subsidy eligibility, export rules, roof shade, system design and actual
               generation can change the result.
             </p>
           </div>
@@ -121,9 +135,9 @@ export default function Calculator() {
             </span>
           </div>
 
-          <a className="btn" href="#quote">
+          <button className="btn" type="button" onClick={openQuote}>
             Get my exact estimate
-          </a>
+          </button>
         </div>
       </div>
     </section>

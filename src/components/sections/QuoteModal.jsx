@@ -1,16 +1,9 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import Icon from '../ui/Icons'
 import { submitLead } from '../../lib/leads'
+import { BILL_RANGES, bandIdForBill } from '../../data/billRanges.js'
 import './modal.css'
 
-// Monthly bill ranges shown as choices. `value` is a representative amount for the lead record.
-export const BILL_RANGES = [
-  { id: 'lt1500', label: 'Less than ₹1500', value: 1000 },
-  { id: '1500-2500', label: '₹1500 - ₹2500', value: 2000 },
-  { id: '2500-4000', label: '₹2500 - ₹4000', value: 3250 },
-  { id: '4000-8000', label: '₹4000 - ₹8000', value: 6000 },
-  { id: 'gt8000', label: 'More than ₹8000', value: 9000 },
-]
 
 const EMPTY = { name: '', phone: '', bill: '', pin: '', terms: false }
 
@@ -25,7 +18,7 @@ function validate(f) {
 }
 
 // "Get Free Quote" popup. Opened from any button that links to #book.
-export default function QuoteModal({ open, onClose, source = 'website' }) {
+export default function QuoteModal({ open, onClose, source = 'website', prefillBill = null }) {
   const [form, setForm] = useState(EMPTY)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | saving | done | error
@@ -36,7 +29,7 @@ export default function QuoteModal({ open, onClose, source = 'website' }) {
   // Reset each time the popup opens, then focus the first field.
   useEffect(() => {
     if (!open) return
-    setForm(EMPTY)
+    setForm({ ...EMPTY, bill: bandIdForBill(prefillBill) })
     setErrors({})
     setStatus('idle')
     setServerError('')
@@ -187,10 +180,11 @@ export default function QuoteModal({ open, onClose, source = 'website' }) {
                   checked={form.terms}
                   onChange={(e) => setForm((f) => ({ ...f, terms: e.target.checked }))}
                 />
-                <span>
+                {/* <span>
                   I agree to SolarMiles <a href="/terms" target="_blank" rel="noreferrer">Terms of use</a> and{' '}
                   <a href="/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.
-                </span>
+                </span> */}
+                 <span>I agree to SolarMiles Terms of use and Privacy Policy.</span>
               </label>
               {errors.terms && <span className="quote-error">{errors.terms}</span>}
             </div>

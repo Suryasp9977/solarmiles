@@ -21,7 +21,12 @@ import QuoteModal from './components/sections/QuoteModal.jsx'
 
 export default function App() {
   const [quoteOpen, setQuoteOpen] = useState(false)
-  const openQuote = useCallback(() => setQuoteOpen(true), [])
+  const [quoteBill, setQuoteBill] = useState(null) // bill amount from the calculator, if any
+
+  const openQuote = useCallback((bill = null) => {
+    setQuoteBill(bill)
+    setQuoteOpen(true)
+  }, [])
   const closeQuote = useCallback(() => setQuoteOpen(false), [])
 
   // Any link to #quote, or any element with data-open-quote, opens the popup.
@@ -34,6 +39,13 @@ export default function App() {
     }
     document.addEventListener('click', onClick)
     return () => document.removeEventListener('click', onClick)
+  }, [openQuote])
+
+  // The calculator opens the popup with the bill it calculated.
+  useEffect(() => {
+    const onCalculatorQuote = (e) => openQuote(e.detail?.bill ?? null)
+    window.addEventListener('solarmiles:open-quote', onCalculatorQuote)
+    return () => window.removeEventListener('solarmiles:open-quote', onCalculatorQuote)
   }, [openQuote])
 
   return (
@@ -60,7 +72,7 @@ export default function App() {
 
       <Footer />
       <WhatsAppButton />
-      <QuoteModal open={quoteOpen} onClose={closeQuote} source="website" />
+      <QuoteModal open={quoteOpen} onClose={closeQuote} source="website" prefillBill={quoteBill} />
     </>
   )
 }
