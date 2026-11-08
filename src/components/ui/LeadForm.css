@@ -90,13 +90,13 @@
 
 
 .form input:not([type='checkbox'])::placeholder {
-  color: #78869b;
+  color: #5b6478;
 }
 
 
 .form input:not([type='checkbox']):focus,
 .form select:focus {
-  border-color: #5397d9;
+  border-color: #2b6fd1;
 
   background: #ffffff;
 
@@ -136,7 +136,7 @@
   background:
     linear-gradient(
       135deg,
-      #101b4d,
+      #232f7a,
       #18265e
     );
 
@@ -162,9 +162,9 @@
 
   border-radius: 10px;
 
-  background: #f59e0b;
+  background: #ffc42e;
 
-  color: #101b4d;
+  color: #232f7a;
 
   font-size: 15px;
 

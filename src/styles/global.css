@@ -3,17 +3,20 @@
   color-scheme: light;
   --bg: #ffffff;
   --card: #fff;
-  --navy: #2b3990;
-  --blue: #5397d9;
-  --sky: #e8f4fd;
-  --ink: #1f2937;
-  --mute: #5b6b80;
+  --navy: #232f7a;
+  --navy-deep: #13225c;
+  --yellow: #ffc42e;
+  --yellow-ink: #15213d;
+  --blue: #2b6fd1;
+  --sky: #eaf2fd;
+  --ink: #1b2440;
+  --mute: #5b6478;
   --green: #0f8a5c;
-  --line: #dbe7f3;
-  --pri: #f59e0b;
-  --pri2: #2b3990;
-  --soft: #eaf5fd;
-  --grad: linear-gradient(90deg, #4f93db, #2b3990);
+  --line: #e2e8f1;
+  --pri: #ffc42e;
+  --pri2: #232f7a;
+  --soft: #eaf2fd;
+  --grad: linear-gradient(90deg, #2b6fd1, #232f7a);
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -110,8 +113,8 @@ section {
 /* Buttons */
 .btn {
   display: inline-block;
-  background: var(--grad);
-  color: #fff;
+  background: var(--yellow);
+  color: var(--yellow-ink);
   font-weight: 700;
   padding: 12px 26px;
   border-radius: 999px;
@@ -248,7 +251,7 @@ th {
 /* SolarMiles 2026 visual system */
 ::selection {
   background: #cfe8fb;
-  color: #101b4d;
+  color: #232f7a;
 }
 
 body {
@@ -293,12 +296,12 @@ h2 {
     transform .18s ease,
     box-shadow .18s ease,
     filter .18s ease;
-  box-shadow: 0 8px 18px rgba(43,57,144,.16);
+  box-shadow: 0 10px 22px rgba(255, 196, 46, .32);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(43,57,144,.22);
+  box-shadow: 0 12px 25px rgba(35, 47, 122,.22);
 }
 
 .btn.o {
@@ -323,7 +326,7 @@ h2 {
   background: linear-gradient(
     180deg,
     #fff 0%,
-    #f7fbff 100%
+    #f5f8fc 100%
   );
 }
 
@@ -336,7 +339,7 @@ h2 {
 }
 
 .subsidy-callout {
-  background: #101b4d;
+  background: #232f7a;
   color: #fff;
   padding: 26px;
   border-radius: 24px;
@@ -350,7 +353,7 @@ h2 {
 }
 
 .subsidy-callout span {
-  color: #b7c4e1;
+  color: #e2e8f1;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: .08em;
@@ -428,7 +431,7 @@ h2 {
 }
 
 .founding {
-  background: #101b4d;
+  background: #232f7a;
   color: #fff;
 }
 
@@ -469,7 +472,7 @@ h2 {
 
 .founder-proof strong {
   display: block;
-  color: #f59e0b;
+  color: #ffc42e;
   font-size: 30px;
 }
 
@@ -482,7 +485,7 @@ h2 {
 .contact-section {
   background: linear-gradient(
     135deg,
-    #eaf5fd,
+    #eaf2fd,
     #fff
   );
 }

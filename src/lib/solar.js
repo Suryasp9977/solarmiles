@@ -48,6 +48,13 @@ export function subsidyFor(kw) {
   const third = 18000 * Math.max(0, Math.min(kw, 3) - 2)
   return Math.min(SUBSIDY_CAP, Math.round(first + third))
 }
+// Tamil Nadu top-up: ₹5,000/kW for the first 2 kW, then capped at ₹22,000 (3 kW and above).
+export const STATE_SUBSIDY_CAP = 22000
+export function stateSubsidyFor(kw) {
+  const first = 5000 * Math.min(kw, 2)
+  const extra = 12000 * Math.max(0, kw - 2)
+  return Math.min(STATE_SUBSIDY_CAP, Math.round(first + extra))
+}
 
 // Present value of a 25-year annuity of 1 per year growing at `rate`.
 const annuity = (rate) => (Math.pow(1 + rate, LIFETIME_YEARS) - 1) / rate
@@ -74,7 +81,9 @@ export function calculatePlan({ bill, roof = DEFAULT_DETAILS.roof, area = DEFAUL
 
   const systemCost = kw * COST_PER_KW
   const subsidy = subsidyFor(kw)
-  const netInvestment = systemCost - subsidy
+  const stateSubsidy = stateSubsidyFor(kw)
+  const totalSubsidy = subsidy + stateSubsidy
+  const netInvestment = systemCost - totalSubsidy
 
   const genLowMonth = kw * genPerKw
   const genHighMonth = genLowMonth * GEN_RANGE_FACTOR
@@ -102,6 +111,8 @@ export function calculatePlan({ bill, roof = DEFAULT_DETAILS.roof, area = DEFAUL
     annualSavingsHigh: roundTo(annualHigh, 1000),
     systemCost,
     subsidy,
+    stateSubsidy,
+    totalSubsidy,
     netInvestment,
     paybackLow: Math.max(0, Math.round((netInvestment / annualHigh) * 10) / 10),
     paybackHigh: Math.max(0, Math.round((netInvestment / annualLow) * 10) / 10),

@@ -45,14 +45,14 @@
 }
 
 .hero h1 span {
-  color: #2b3990;
+  color: #232f7a;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #2b3990;
+  color: #232f7a;
   font-weight: 800;
   font-size: 13px;
   text-transform: uppercase;
@@ -63,7 +63,7 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #f59e0b;
+  background: #ffc42e;
   box-shadow: 0 0 0 5px rgba(245,158,11,.12);
 }
 
@@ -94,7 +94,7 @@
 
 .pills span {
   background: #fff;
-  border: 1px solid #dbe7f3;
+  border: 1px solid #e2e8f1;
   color: var(--navy);
   font-weight: 650;
   padding: 7px 12px;
@@ -108,13 +108,13 @@
   gap: 0;
   margin-top: 28px;
   max-width: 630px;
-  border-top: 1px solid #dbe7f3;
+  border-top: 1px solid #e2e8f1;
   padding-top: 18px;
 }
 
 .hero-trust div {
   padding: 0 22px;
-  border-left: 1px solid #dbe7f3;
+  border-left: 1px solid #e2e8f1;
 }
 
 .hero-trust div:first-child {
@@ -139,7 +139,7 @@
 
 .microcopy {
   font-size: 11px;
-  color: #78869b;
+  color: #5b6478;
   margin: 12px 0 0;
   max-width: 600px;
 }
@@ -179,7 +179,7 @@
   justify-content: space-between;
   font-size: 10px;
   font-weight: 800;
-  color: #5b6b80;
+  color: #5b6478;
   letter-spacing: .1em;
 }
 
@@ -206,7 +206,7 @@
   right: 24px;
   top: 18px;
   font-size: 44px;
-  color: #f59e0b;
+  color: #ffc42e;
   filter: drop-shadow(
     0 8px 18px rgba(245,158,11,.28)
   );
@@ -286,7 +286,7 @@
 }
 
 .roof-metrics div {
-  background: #f7fbff;
+  background: #f5f8fc;
   border-radius: 13px;
   padding: 10px;
 }
@@ -298,7 +298,7 @@
 }
 
 .roof-metrics small {
-  color: #78869b;
+  color: #5b6478;
   font-size: 9px;
   letter-spacing: .1em;
   font-weight: 800;
@@ -334,7 +334,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
-  background: #101b4d;
+  background: #232f7a;
   color: #fff;
   padding: 12px 15px;
   border-radius: 16px;
@@ -345,8 +345,8 @@
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: #f59e0b;
-  color: #101b4d;
+  background: #ffc42e;
+  color: #232f7a;
   display: grid;
   place-items: center;
   font-weight: 900;
@@ -362,7 +362,7 @@
 }
 
 .floating-badge small {
-  color: #b7c4e1;
+  color: #e2e8f1;
   font-size: 10px;
 }
 

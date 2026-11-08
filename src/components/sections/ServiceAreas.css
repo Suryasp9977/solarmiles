@@ -89,7 +89,7 @@
   border: 1px solid #dce8f2;
 
   box-shadow:
-    0 16px 42px rgba(43, 57, 144, 0.08);
+    0 16px 42px rgba(35, 47, 122, 0.08);
 }
 
 
@@ -122,7 +122,7 @@
 
   margin-bottom: 7px;
 
-  color: #4c82c7;
+  color: #2b6fd1;
 
   font-size: 9px;
 
@@ -226,8 +226,8 @@
   background:
     linear-gradient(
       135deg,
-      #5397d9,
-      #2b3990
+      #2b6fd1,
+      #232f7a
     );
 
   box-shadow:
@@ -352,10 +352,10 @@
 
   background: #eef7fd;
 
-  color: #2b3990;
+  color: #232f7a;
 
   box-shadow:
-    0 4px 12px rgba(43, 57, 144, 0.07);
+    0 4px 12px rgba(35, 47, 122, 0.07);
 }
 
 
@@ -436,8 +436,8 @@
   background:
     linear-gradient(
       135deg,
-      #5397d9,
-      #2b3990
+      #2b6fd1,
+      #232f7a
     );
 
   color: #ffffff;
@@ -451,7 +451,7 @@
   white-space: nowrap;
 
   box-shadow:
-    0 6px 15px rgba(43, 57, 144, 0.16);
+    0 6px 15px rgba(35, 47, 122, 0.16);
 
   transition:
     transform 0.18s ease,
@@ -470,7 +470,7 @@
   transform: translateY(-1px);
 
   box-shadow:
-    0 9px 20px rgba(43, 57, 144, 0.22);
+    0 9px 20px rgba(35, 47, 122, 0.22);
 }
 
 
@@ -496,7 +496,7 @@
   background:
     linear-gradient(
       145deg,
-      #f7fbff 0%,
+      #f5f8fc 0%,
       #edf6fd 52%,
       #e5f1fb 100%
     );
@@ -504,7 +504,7 @@
   border: 1px solid #dbe8f3;
 
   box-shadow:
-    0 18px 50px rgba(43, 57, 144, 0.10);
+    0 18px 50px rgba(35, 47, 122, 0.10);
 }
 
 
@@ -530,7 +530,7 @@
 
   margin-bottom: 9px;
 
-  color: #4c82c7;
+  color: #2b6fd1;
 
   font-size: 10px;
 
@@ -614,7 +614,7 @@
 
   border-radius: 50%;
 
-  background: #f59e0b;
+  background: #ffc42e;
 
   box-shadow:
     0 0 0 4px rgba(245, 158, 11, 0.14);
@@ -677,12 +677,12 @@
 
   background-image:
     linear-gradient(
-      rgba(43, 57, 144, 0.045) 1px,
+      rgba(35, 47, 122, 0.045) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(43, 57, 144, 0.045) 1px,
+      rgba(35, 47, 122, 0.045) 1px,
       transparent 1px
     );
 
@@ -732,7 +732,7 @@
   border-radius: 50%;
 
   border:
-    1px dashed rgba(43, 57, 144, 0.25);
+    1px dashed rgba(35, 47, 122, 0.25);
 
   background:
     rgba(255, 255, 255, 0.38);
@@ -753,14 +753,14 @@
   background:
     linear-gradient(
       135deg,
-      #5397d9,
-      #2b3990
+      #2b6fd1,
+      #232f7a
     );
 
   color: white;
 
   box-shadow:
-    0 12px 28px rgba(43, 57, 144, 0.24);
+    0 12px 28px rgba(35, 47, 122, 0.24);
 }
 
 
@@ -812,7 +812,7 @@
     linear-gradient(
       90deg,
       transparent,
-      rgba(43, 57, 144, 0.18),
+      rgba(35, 47, 122, 0.18),
       transparent
     );
 
@@ -880,10 +880,10 @@
 
 
 .coverage-cluster.active {
-  border-color: #4c82c7;
+  border-color: #2b6fd1;
 
   box-shadow:
-    0 15px 38px rgba(43, 57, 144, 0.17);
+    0 15px 38px rgba(35, 47, 122, 0.17);
 
   background:
     linear-gradient(
@@ -988,7 +988,7 @@
       #d9ebfa
     );
 
-  color: #2b3990;
+  color: #232f7a;
 
   font-size: 16px;
 
@@ -1010,7 +1010,7 @@
 .cluster-eyebrow {
   display: block;
 
-  color: #7890a8;
+  color: #5b6478;
 
   font-size: 8px;
 
@@ -1047,7 +1047,7 @@
 
 
 .cluster-arrow {
-  color: #7890a8;
+  color: #5b6478;
 
   font-size: 18px;
 
@@ -1060,7 +1060,7 @@
   transform:
     translateX(3px);
 
-  color: #2b3990;
+  color: #232f7a;
 }
 
 
@@ -1120,8 +1120,8 @@
   background:
     linear-gradient(
       135deg,
-      #5397d9,
-      #2b3990
+      #2b6fd1,
+      #232f7a
     );
 
   color: white;
@@ -1163,7 +1163,7 @@
 
 
 .coverage-note > span {
-  color: #4c82c7;
+  color: #2b6fd1;
 
   font-weight: 800;
 

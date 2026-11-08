@@ -55,7 +55,7 @@
 }
 
 .result-main {
-  background: linear-gradient(135deg,#101b4d,#2b3990);
+  background: linear-gradient(135deg,#232f7a,#232f7a);
   color: #fff;
   border-radius: 24px;
   padding: 30px;
@@ -65,7 +65,7 @@
 .result-kicker {
   font-size: 11px;
   letter-spacing: .1em;
-  color: #b9c7e5;
+  color: #e2e8f1;
   font-weight: 800;
 }
 
@@ -99,7 +99,7 @@
 }
 
 .result-pair small {
-  color: #b9c7e5;
+  color: #e2e8f1;
   font-size: 11px;
 }
 

@@ -112,7 +112,12 @@ export default function Calculator() {
 
             <div className="assumption">
               <span>Estimated subsidy</span>
-              <b>up to {formatINR(plan.subsidy)}</b>
+              <b>up to {formatINR(plan.totalSubsidy)}</b>
+            </div>
+
+            <div className="assumption">
+              <span>Central + TN top-up</span>
+              <b>{formatINR(plan.subsidy)} + {formatINR(plan.stateSubsidy)}</b>
             </div>
 
             <div className="assumption">
